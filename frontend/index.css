@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+
+.nav-username {
+  color: rgb(169, 169, 169);
+  font-style: italic;
+}
+
+.navbar {
+  margin:1rem;
+}
+
+.nav-link {
+  padding:1rem;
+}
+
+.bootstrap-card {
+  margin: 1.25rem;
+  padding: 1.5rem;
+  color:rgb(75, 75, 75);
+}
+
+.bootstrap-card:hover {
+  color:rgb(116, 116, 116);
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.no-decoration:hover {
+  text-decoration: none;
+}
