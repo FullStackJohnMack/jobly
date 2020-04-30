@@ -10,39 +10,37 @@ import { Container } from 'react-bootstrap';
 
 function App() {
 
-  // const [loggedIn,setLoggedIn] = useState(false);
-  // const [user,setUser] = useState(null);
+  const [loggedIn,setLoggedIn] = useState(false);
+  const [user,setUser] = useState(null);
 
-  // const showLoggedIn = (bool) => {
-  //   setLoggedIn(bool);
-  // }
+  const showLoggedIn = (bool) => {
+    setLoggedIn(bool);
+  }
 
-  // useEffect(()=> {
-  //   if (localStorage.getItem('_token')) {
-  //     const token = localStorage.getItem('_token');
-  //     const username = JwtDecode(token).username;
-  //     async function getUser() {
-  //         const user = await JoblyApi.getUser(username);
-  //         setUser(user);
-  //     }
-  //     getUser();  
-  //   }
-  // },[loggedIn])
+  useEffect(()=> {
+    if (localStorage.getItem('_token')) {
+      const token = localStorage.getItem('_token');
+      const username = JwtDecode(token).username;
+      async function getUser() {
+          const user = await JoblyApi.getUser(username);
+          setUser(user);
+      }
+      getUser();  
+    }
+  },[loggedIn])
 
-  // return (
-  //   <Container className="App">
-      
-  //     <BrowserRouter>
-  //     <LoggedInContext.Provider value={{loggedIn, user, setUser, showLoggedIn}}>
-  //       <NavBar user={user}/>
-  //       <Routes user={user}/>
-  //     </LoggedInContext.Provider>
-  //     </BrowserRouter>
-  //   </Container>
-  // );
   return (
-    <h1>Test</h1>
-  )
+    <Container className="App">
+      
+      <BrowserRouter>
+      <LoggedInContext.Provider value={{loggedIn, user, setUser, showLoggedIn}}>
+        <NavBar user={user}/>
+        <Routes user={user}/>
+      </LoggedInContext.Provider>
+      </BrowserRouter>
+    </Container>
+  );
+
 }
 
 export default App;
